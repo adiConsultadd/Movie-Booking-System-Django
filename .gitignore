@@ -4,5 +4,4 @@
 __pycache__
 migrations
 db.sqlite3
-pytest.ini
 .coverage
