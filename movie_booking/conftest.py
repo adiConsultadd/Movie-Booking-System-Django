@@ -1,14 +1,16 @@
 import pytest
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.test import APIClient
 
 @pytest.fixture
 def api_client():
-    from rest_framework.test import APIClient
+    """ Fixture to provide an instance of APIClient for making test requests """
     return APIClient()
- 
+
 @pytest.fixture
 def user_data():
+    """ Fixture to provide default user data"""
     return {
         'username': 'Alex',
         'password': 'alexmaha@123',
@@ -19,6 +21,7 @@ def user_data():
 
 @pytest.fixture
 def admin_data():
+    """ Fixture to provide default admin user data """
     return {
         'username': 'adminuser',
         'password': 'adminpass123',
@@ -30,6 +33,7 @@ def admin_data():
 
 @pytest.fixture
 def create_user(db, user_data):
+    """ Fixture to create a regular user """
     def make_user(**kwargs):
         if not kwargs:
             kwargs = user_data
@@ -38,9 +42,9 @@ def create_user(db, user_data):
         return user
     return make_user
 
-
 @pytest.fixture
 def create_admin(db, admin_data):
+    """ Fixture to create an admin user """
     def make_admin(**kwargs):
         if not kwargs:
             kwargs = admin_data
@@ -52,6 +56,7 @@ def create_admin(db, admin_data):
 
 @pytest.fixture
 def auth_client(api_client, create_user):
+    """ Fixture to provide an authenticated API client with a regular user """
     user = create_user()
     refresh = RefreshToken.for_user(user)
     api_client.credentials(HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}')
@@ -59,6 +64,7 @@ def auth_client(api_client, create_user):
 
 @pytest.fixture
 def admin_client(api_client, create_admin):
+    """ Fixture to provide an authenticated API client with an admin user """
     admin = create_admin()
     refresh = RefreshToken.for_user(admin)
     api_client.credentials(HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}')
