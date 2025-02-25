@@ -1,4 +1,4 @@
-# 🎬 Movie Ticket Booking System - Django REST Framework
+# Movie Ticket Booking System - Django REST Framework
 
 A movie ticket booking system built using Django REST Framework (DRF), implementing role-based access control (RBAC) and JWT authentication.
 
