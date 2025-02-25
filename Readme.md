@@ -89,50 +89,21 @@ Authorization: Bearer <your_token_here>
 
 ## Project Structure
 ```bash
-    movie_booking/
-    │── core/
-    │   ├── __init__.py
-    │   ├── asgi.py
-    │   ├── settings.py
-    │   ├── urls.py
-    │   ├── wsgi.py
-    │
-    │── auth/
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── permissions.py
-    │   ├── serializers.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    │
-    │── booking/
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    │
-    │── movie/
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    |
-    │── .env
-    │── .gitignore
-    │── manage.py
-    │── requirements.txt
-    │── README.md
+MOVIE_BOOKING_PROJECT/
+│── .venv/
+│── movie_booking/
+│   │── auth/
+│   │── booking/
+│   │── core/
+│   │── movie/
+│   │── conftest.py
+│   │── manage.py
+│   │── pytest.ini
+│   │── .env
+│── .gitignore
+│── Readme.md
+│── requirements.txt
+│── Ticket_Booking_System.postman_collection.json
 ```
 
 ## Running Tests (Pytest)
