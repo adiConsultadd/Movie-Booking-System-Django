@@ -158,3 +158,10 @@ pytest -v -m bookings
 ```bash
 pytest --cov
 ```
+
+## Postman Collection
+### Import the Collection
+- Open Postman and go to File > Import.
+- Select the exported .json file and import it.
+
+![Image](https://github.com/user-attachments/assets/21851803-477f-4d55-996a-6754ef268d55)
