@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "22f0e900-7c70-4547-a68f-4eafc7a7cfe7",
+		"name": "Ticket Booking System (Django-2)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42395676"
+	},
+	"item": [
+		{
+			"name": "Auth Endpoints",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Apple\",\n    \"email\": \"apple@gmail.com\",\n    \"password\": \"aditya@123\",\n    \"password2\": \"aditya@123\",\n    \"first_name\": \"Akash\",\n    \"last_name\": \"Shukla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000//api/auth/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"",
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"Aditya\",\n    \"password\" : \"aditya@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie Endpoints",
+			"item": [
+				{
+					"name": "View All Movies",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNTkxLCJpYXQiOjE3NDAzOTYxOTEsImp0aSI6ImQ4ZmZiOTY0YjJiYjRhNGJiNzU0NzlhNjE2NzE3NzJmIiwidXNlcl9pZCI6MX0.mrYEurqvnygEcS9LWaGKpYdPKB-OrFM5m8mHbllDQus",
+								"description": "Admin Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDcyNTY0LCJpYXQiOjE3NDAzODYxNjQsImp0aSI6IjI1NWQ4N2UzNGUyOTRmYzE5ZjRkMzYzMGRmYWEyZWMzIiwidXNlcl9pZCI6MX0.IoeXYeu_sgDOhAXJE5G0P_OWZbdxT0OQGPbPIhNp0gw",
+								"description": "Normal User Token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Specific Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDY5NDQwLCJpYXQiOjE3NDAzODMwNDAsImp0aSI6IjM2NjlmM2VlMzA2NzQ1OTY4OTYwMWZhNzkwNDU4MzU5IiwidXNlcl9pZCI6Mn0.1AcX6b1OFfa18qB-MMlXAlYgaAOrR5I6DduTtooE1Do",
+								"description": "Admin Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDcyNTY0LCJpYXQiOjE3NDAzODYxNjQsImp0aSI6IjI1NWQ4N2UzNGUyOTRmYzE5ZjRkMzYzMGRmYWEyZWMzIiwidXNlcl9pZCI6MX0.IoeXYeu_sgDOhAXJE5G0P_OWZbdxT0OQGPbPIhNp0gw",
+								"description": "Normal User Token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Movie (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDg4NTg0LCJpYXQiOjE3NDA0MDIxODQsImp0aSI6IjdhMzQ1MDNlMzc5MDQ2YjRiZWZiNDRhMzBhZmI0ZTFjIiwidXNlcl9pZCI6MX0.jZPH0b_XLpri9zURMIRlIR3Wo08uoZNsWVR4kYvbAXE",
+								"description": "Admin Token",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDg4NTM1LCJpYXQiOjE3NDA0MDIxMzUsImp0aSI6Ijg0ZDdiYzUwNWFjMjRjNmRhZDZhM2U3MTY2ZTg5Y2QwIiwidXNlcl9pZCI6M30.750V079OB4jnA14obeMzMaFSA9fMKSBpR5roDxGwI-k",
+								"description": "Normal User Token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Avengers Infinity War\",\n    \"description\": \"Introduction of Mad Titan who is on a quest to fill his gauntlet up with stones. Can he do it? Or will the migthy aveneger be able to stop him once and for all\",\n    \"release_date\": \"2024-02-23\",\n    \"duration\": 120,\n    \"price\": 1200.00,\n    \"showtime\" : \"2025-02-24T14:30:00Z\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNTkxLCJpYXQiOjE3NDAzOTYxOTEsImp0aSI6ImQ4ZmZiOTY0YjJiYjRhNGJiNzU0NzlhNjE2NzE3NzJmIiwidXNlcl9pZCI6MX0.mrYEurqvnygEcS9LWaGKpYdPKB-OrFM5m8mHbllDQus",
+								"description": "Admin Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDcyNTY0LCJpYXQiOjE3NDAzODYxNjQsImp0aSI6IjI1NWQ4N2UzNGUyOTRmYzE5ZjRkMzYzMGRmYWEyZWMzIiwidXNlcl9pZCI6MX0.IoeXYeu_sgDOhAXJE5G0P_OWZbdxT0OQGPbPIhNp0gw",
+								"description": "Normal User Token ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Juarassic Park\",\n    \"description\": \"Aaaaahhhhhhhhhhhhh\",\n    \"release_date\": \"2024-02-23\",\n    \"duration\": 136,\n    \"price\": 13.50,\n    \"showtime\": \"2025-02-24T14:30:00Z\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/movies/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDg4NTg0LCJpYXQiOjE3NDA0MDIxODQsImp0aSI6IjdhMzQ1MDNlMzc5MDQ2YjRiZWZiNDRhMzBhZmI0ZTFjIiwidXNlcl9pZCI6MX0.jZPH0b_XLpri9zURMIRlIR3Wo08uoZNsWVR4kYvbAXE",
+								"description": "Admin Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDg4NTM1LCJpYXQiOjE3NDA0MDIxMzUsImp0aSI6Ijg0ZDdiYzUwNWFjMjRjNmRhZDZhM2U3MTY2ZTg5Y2QwIiwidXNlcl9pZCI6M30.750V079OB4jnA14obeMzMaFSA9fMKSBpR5roDxGwI-k",
+								"description": "Normal User Token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/4/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Endpoints",
+			"item": [
+				{
+					"name": "View All Bookings (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNTUxOTI1LCJpYXQiOjE3NDA0NjU1MjUsImp0aSI6ImU3NTc1OTNkMjdmMjRlMjg5ZDc2N2Q1ZTlkNTA5NzAyIiwidXNlcl9pZCI6Mn0.GBTmY1S79i-JV3VhFuW3huk_lhZTgCGFdleWoTjJ118",
+								"description": "Normal User Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNTUxOTAzLCJpYXQiOjE3NDA0NjU1MDMsImp0aSI6IjYxOGIyNWU3NDIyYjQ5NGZhNjUwODdjODEzZWM3ZDUyIiwidXNlcl9pZCI6MX0.G9WzKsusO0OVGSN1xZme9RgMfSptrnrDmiL3wY5ujUw",
+								"description": "Admin Token ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/bookings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Bookings Of User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNzc1LCJpYXQiOjE3NDAzOTYzNzUsImp0aSI6ImU0MGRkZGU1MjI2MTQwMTZiYzk0M2NlNTY0NjBmZTNjIiwidXNlcl9pZCI6Mn0.L2i8cdBTzYlArxER2clE1t9s_fQ7rm2LmTgc18ACrN4",
+								"description": "Normal User Token",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNTkxLCJpYXQiOjE3NDAzOTYxOTEsImp0aSI6ImQ4ZmZiOTY0YjJiYjRhNGJiNzU0NzlhNjE2NzE3NzJmIiwidXNlcl9pZCI6MX0.mrYEurqvnygEcS9LWaGKpYdPKB-OrFM5m8mHbllDQus",
+								"description": "Admin Token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/bookings/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Movies Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNzM5LCJpYXQiOjE3NDAzOTYzMzksImp0aSI6ImU0OWVlZDVmYmIwMTQyNWJiNDM0ODhhYWIxMzkyN2I0IiwidXNlcl9pZCI6MX0.JErPtXWB3lfDFzSYPXqv4kv5uAGto6CkAkxRlTsxLmo",
+								"description": "Admin Token",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDgyNzc1LCJpYXQiOjE3NDAzOTYzNzUsImp0aSI6ImU0MGRkZGU1MjI2MTQwMTZiYzk0M2NlNTY0NjBmZTNjIiwidXNlcl9pZCI6Mn0.L2i8cdBTzYlArxER2clE1t9s_fQ7rm2LmTgc18ACrN4",
+								"description": "Normal User Token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/1/book/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"book",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQwNDcyNTY0LCJpYXQiOjE3NDAzODYxNjQsImp0aSI6IjI1NWQ4N2UzNGUyOTRmYzE5ZjRkMzYzMGRmYWEyZWMzIiwidXNlcl9pZCI6MX0.IoeXYeu_sgDOhAXJE5G0P_OWZbdxT0OQGPbPIhNp0gw",
+								"description": "Normal User Token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/1/cancel/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"cancel",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
